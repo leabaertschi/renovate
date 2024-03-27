@@ -40,6 +40,8 @@ export async function checkOnboardingBranch(
     // delete onboarding cache
     deleteOnboardingCache();
     return { ...config, repoIsOnboarded };
+  } else {
+    logger.debug('Repo is not onboarded');
   }
   checkIfConfigured(config);
 
