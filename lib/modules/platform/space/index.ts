@@ -275,3 +275,10 @@ export function findIssue(title: string): Promise<Issue | null> {
 export function getIssueList(): Promise<Issue[]> {
   return Promise.resolve([]);
 }
+
+/**
+ * Unsed, no Dashboard
+ */
+export function maxBodyLength(): number {
+  return Infinity;
+}
