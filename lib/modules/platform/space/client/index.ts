@@ -8,8 +8,8 @@ export class SpaceClient {
   jobs: SpaceJobsClient;
   codeReview: SpaceCodeReviewClient;
 
-  constructor(endpoint: string) {
-    const http = new SpaceHttp(endpoint);
+  constructor(endpoint: string, token?: string) {
+    const http = new SpaceHttp(endpoint, { token });
     this.repository = new SpaceRepositoryClient(http);
     this.jobs = new SpaceJobsClient(http);
     this.codeReview = new SpaceCodeReviewClient(http);

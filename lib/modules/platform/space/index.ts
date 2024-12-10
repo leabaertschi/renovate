@@ -58,7 +58,9 @@ export function initPlatform({
   }
 
   globalConfig.endpoint = trimTrailingSlash(endpoint);
-  dao = new SpaceDao(new SpaceClient(`https://${globalConfig.endpoint}`));
+  dao = new SpaceDao(
+    new SpaceClient(globalConfig.endpoint.replace('-git', ''), token),
+  );
 
   return Promise.resolve({
     endpoint: globalConfig.endpoint,
